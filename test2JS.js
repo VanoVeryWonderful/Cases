@@ -7,15 +7,25 @@ let currentImageIndex = 0;
 
 
 document.getElementById("main_Block_for_Img").onwheel = function circle(event) {
-
-	if (event.deltaY > 0) {
+	
+	if (event.deltaY > 0 || currentImageIndex === 0) {
 		currentImageIndex += 1;
-		} 
-		else if (event.deltaY < 0) {
-		currentImageIndex -= 1;
+		if (currentImageIndex === 126){
+		currentImageIndex = 0;
+	    }
+		console.log(currentImageIndex);
+		
 	}
-
+	else if (event.deltaY < 0) {
+		currentImageIndex -= 1;
+		if (currentImageIndex === 0){
+		currentImageIndex = 125;
+	    }
+		
+	}
+	
 	imageElement.src = images[currentImageIndex];
 	return false;
 }
- 
+
+
