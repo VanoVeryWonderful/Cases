@@ -13,7 +13,6 @@ document.getElementById("main_Block_for_Img").onwheel = function circle(event) {
 		if (currentImageIndex === 126){
 		currentImageIndex = 0;
 	    }
-		console.log(currentImageIndex);
 		
 	}
 	else if (event.deltaY < 0) {
@@ -23,8 +22,9 @@ document.getElementById("main_Block_for_Img").onwheel = function circle(event) {
 	    }
 		
 	}
-	
+
 	imageElement.src = images[currentImageIndex];
+	
 	return false;
 }
 
